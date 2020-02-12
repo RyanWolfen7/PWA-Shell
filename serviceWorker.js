@@ -19,7 +19,7 @@ self.addEventListener('install', evt => {
         caches.open(staticCacheName).then(cache => {
             console.log('caching shell assets')
             cache.addAll(assets)
-        })
+        }).catch(error => console.log(error))
     )
 
 })
