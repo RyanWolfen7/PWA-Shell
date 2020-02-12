@@ -18,7 +18,7 @@ self.addEventListener('install', evt => {
     evt.waitUntil(
         caches.open(staticCacheName).then(cache => {
             console.log('caching shell assets')
-            cache.addAll(assets)
+            cache.addAll(assets).catch(error => console.log('ERROR!!!', error))
         }).catch(error => console.log(error))
     )
 
